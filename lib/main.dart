@@ -1,96 +1,55 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Material App',
       home: Scaffold(
         appBar: AppBar(
-          leading: const Icon(Icons.home),
-          actions: [
-            IconButton(
-              onPressed: () {
-                print('Button clicked');
-              },
-              icon: Icon(Icons.arrow_left),
-            ),
-          ],
-          title: Text('Material App Bar'),
+          title: const Text('This is my app'),
         ),
         body: SingleChildScrollView(
-          child: SizedBox(
-            width: double.infinity,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                Container(
+          child: Column(
+            children: [
+              Center(
+                child: Container(
+                  child: const Text('Hello World'),
+                  decoration: const BoxDecoration(color: Colors.amber),
                   padding: const EdgeInsets.symmetric(
-                    horizontal: 8.0,
-                    vertical: 24.0,
-                  ),
-                  decoration: const BoxDecoration(
-                    borderRadius: BorderRadius.all(Radius.circular(25.0)),
-                    color: Color(0xFF000000),
-                  ),
-                  child: const Align(
-                    alignment: Alignment.centerRight,
-                    child: Text(
-                      'Hello World',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 24.0,
-                        fontWeight: FontWeight.w500,
-                      ),
-                    ),
+                    horizontal: 50.0,
+                    vertical: 50.0,
                   ),
                 ),
-                const SizedBox(
-                  height: 10.0,
-                ),
-                Container(
+              ),
+              const SizedBox(
+                height: 10.0,
+              ),
+              Center(
+                child: Container(
+                  child: const Text('Hello World'),
+                  decoration: const BoxDecoration(color: Colors.red),
                   padding: const EdgeInsets.symmetric(
-                    horizontal: 8.0,
-                    vertical: 24.0,
-                  ),
-                  decoration: const BoxDecoration(
-                    borderRadius: BorderRadius.all(Radius.circular(25.0)),
-                    color: Colors.amber,
-                  ),
-                  child: const Center(
-                    child: Text(
-                      'Hello World',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 24.0,
-                        fontWeight: FontWeight.w500,
-                      ),
-                    ),
+                    horizontal: 50.0,
+                    vertical: 50.0,
                   ),
                 ),
-                const SizedBox(
-                  height: 10.0,
-                ),
-                Image.network(
-                    'https://mbcet.ac.in/wp-content/uploads/2019/04/mbcet.jpg'),
-                const SizedBox(
-                  height: 50.0,
-                ),
-                Image.asset('assets/mbcet.jpg'),
-                const SizedBox(
-                  height: 10.0,
-                ),
-                Image.network(
-                    'https://mbcet.ac.in/wp-content/uploads/2019/04/mbcet.jpg'),
-                const SizedBox(
-                  height: 50.0,
-                ),
-                Image.asset('assets/mbcet.jpg'),
-              ],
-            ),
+              ),
+              const SizedBox(
+                height: 10.0,
+              ),
+              Image.network(
+                'https://images.unsplash.com/photo-1453728013993-6d66e9c9123a?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dmlld3xlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80',
+              ),
+              const SizedBox(
+                height: 10.0,
+              ),
+              Image.asset('assets/logo_social.png'),
+            ],
           ),
         ),
       ),
