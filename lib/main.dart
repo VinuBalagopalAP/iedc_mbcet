@@ -9,8 +9,15 @@ void main() {
   runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({Key? key}) : super(key: key);
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  bool passwordhiddenaano = true;
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +46,7 @@ class MyApp extends StatelessWidget {
               padding: const EdgeInsets.all(24.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: const [
+                children: [
                   // MyAppName(),
                   // BlackholeImage(),
                   // MyPrimaryButton(buttonText: 'Compose Email'),
@@ -47,17 +54,17 @@ class MyApp extends StatelessWidget {
                   // SizedBox(
                   //   height: 30,
                   // ),
-                  TopBar(),
-                  SizedBox(
+                  const TopBar(),
+                  const SizedBox(
                     height: 75,
                   ),
 
-                  WelcomeText(),
-                  SizedBox(
+                  const WelcomeText(),
+                  const SizedBox(
                     height: 25,
                   ),
 
-                  TextField(
+                  const TextField(
                     keyboardType: TextInputType.emailAddress,
                     decoration: InputDecoration(
                       hintText: "Enter your email",
@@ -65,26 +72,43 @@ class MyApp extends StatelessWidget {
                       // suffixIcon: Icon(Icons.person),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 15,
                   ),
                   TextField(
+                    obscureText: passwordhiddenaano,
                     // keyboardType: TextInputType.visiblePassword,
+                    // ? :
                     decoration: InputDecoration(
                       hintText: "Enter your password",
                       labelText: "Password",
-                      // suffixIcon: Icon(Icons.person),
+                      suffixIcon: IconButton(
+                        onPressed: () {
+                          setState(() {
+                            passwordhiddenaano = !passwordhiddenaano;
+                          });
+                        },
+                        icon: passwordhiddenaano
+                            ? Icon(
+                                Icons.visibility,
+                                color: Colors.blue,
+                              )
+                            : Icon(
+                                Icons.visibility_off,
+                                color: Colors.red,
+                              ),
+                      ),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 25,
                   ),
-                  Logos(),
-                  SizedBox(
+                  const Logos(),
+                  const SizedBox(
                     height: 150,
                   ),
 
-                  ArrowButton(),
+                  const ArrowButton(),
                 ],
               ),
             ),

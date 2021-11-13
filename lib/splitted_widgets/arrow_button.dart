@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:iedc_mbcet/screens/home.dart';
 import 'package:iedc_mbcet/splitted_widgets/forget_password.dart';
 
 class ArrowButton extends StatelessWidget {
@@ -8,24 +9,37 @@ class ArrowButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        const ForgetPassword(),
-        Container(
-          padding: const EdgeInsets.all(20.0),
-          child: const Icon(
-            Icons.arrow_forward,
-            color: Colors.white,
+    return GestureDetector(
+      onTap: () {
+        // oru puthiya page varanam
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) {
+              return const HomePage();
+            },
           ),
-          decoration: BoxDecoration(
-            color: Colors.blueAccent.withOpacity(0.4),
-            borderRadius: const BorderRadius.all(
-              Radius.circular(10.0),
+        );
+      },
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          const ForgetPassword(),
+          Container(
+            padding: const EdgeInsets.all(20.0),
+            child: const Icon(
+              Icons.arrow_forward,
+              color: Colors.white,
+            ),
+            decoration: BoxDecoration(
+              color: Colors.blueAccent.withOpacity(0.4),
+              borderRadius: const BorderRadius.all(
+                Radius.circular(10.0),
+              ),
             ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }
