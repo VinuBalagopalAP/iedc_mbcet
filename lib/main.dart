@@ -89,11 +89,11 @@ class _MyAppState extends State<MyApp> {
                           });
                         },
                         icon: passwordhiddenaano
-                            ? Icon(
+                            ? const Icon(
                                 Icons.visibility,
                                 color: Colors.blue,
                               )
-                            : Icon(
+                            : const Icon(
                                 Icons.visibility_off,
                                 color: Colors.red,
                               ),
