@@ -1,6 +1,6 @@
 # iedc_mbcet
 
-A new Flutter project.
+A new Flutter project for mentoring the students at IEDC MBCET Flutter BootCamp
 
 ## Getting Started
 
