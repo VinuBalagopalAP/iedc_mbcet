@@ -21,3 +21,19 @@ samples, guidance on mobile development, and a full API reference.
  ### Day 1
  
  Introduction to Flutter & Dart
+ 
+ ### Day 2
+ 
+ Basics Widgets
+
+ ### Day 3
+ 
+ Implementing UI
+ 
+  ### Day 4
+ 
+ Implementing UI - Part 2
+ 
+  ### Day 5 - Final Day
+ 
+  Project idea discussions
